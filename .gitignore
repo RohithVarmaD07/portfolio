@@ -1,0 +1,36 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+dist/
+.astro/
+coverage/
+playwright-report/
+test-results/
+runtime/
+*.log
+.DS_Store
+Thumbs.db
+
+# dist contains authored, buildless static source for this portfolio.
+!dist/
+!dist/**
+
+# Publication boundaries
+.env*
+.aws/
+.credentials/
+*.pem
+*.key
+.venv/
+__pycache__/
+.pytest_cache/
+runtime/
+evidence-local/
+*.log
+*.duckdb*
+*.sqlite*
+*.partial
+*.tmp
