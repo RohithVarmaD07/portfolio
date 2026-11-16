@@ -47,3 +47,10 @@ for(const name of ['LICENSE.txt','LICENSE_SCOPE.txt','THIRD_PARTY.txt'])test('re
 test('reject missing license asset',async()=>{await restore();await unlink(join(root,'dist/LICENSE.txt'));const result=run('["PrivateExample"]');assert.notEqual(result.status,0);assert.match(result.stderr,/Unexpected deployment file/);});
 test('reject missing footer licensing link',async()=>{await restore();const file=join(root,'dist/index.html');await writeFile(file,(await readFile(file,'utf8')).replace('href="license.html"','href="evidence.html"'));const result=run('["PrivateExample"]');assert.notEqual(result.status,0);assert.match(result.stderr,/Missing footer license link/);});
 test('reject incomplete inline notice',async()=>{await restore();const file=join(root,'dist/license.html');await writeFile(file,(await readFile(file,'utf8')).replace('Permission is hereby granted','Permission omitted'));const result=run('["PrivateExample"]');assert.notEqual(result.status,0);assert.match(result.stderr,/Incomplete inline notice/);});
+
+for(const [name,old,value,message] of [
+ ['stale robots metadata','content="index,follow"','content="noindex,nofollow"','Launch robots metadata'],
+ ['stale preview label','ENGINEERING PORTFOLIO','LOCAL DESIGN PREVIEW','Stale preview metadata or label'],
+ ['unapproved repository link','https://github.com/RohithVarmaD07/mediflow-ai','https://github.com/RohithVarmaD07/other-repository','Unapproved external link'],
+ ['repository lookalike host','https://github.com/RohithVarmaD07/mediflow-ai','https://github.com.example.invalid/RohithVarmaD07/mediflow-ai','Unapproved external link']
+])test('reject '+name,async()=>{await restore();const file=join(root,'dist/index.html');const source=await readFile(file,'utf8');assert(source.includes(old));await writeFile(file,source.replace(old,value));const result=run('["PrivateExample"]');assert.notEqual(result.status,0);assert(result.stderr.includes(message),result.stderr);});

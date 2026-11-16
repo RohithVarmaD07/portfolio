@@ -14,11 +14,11 @@ for(const name of names){
  assert(!privateTerms.some(term=>text.toLowerCase().includes(term.trim().toLowerCase())),'Private identifier in '+name);
  assert(!/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(text),'Unapproved email');
  if(name.endsWith('.html')){
-  assert(/<html lang="en">/.test(text));assert(/name="viewport"/.test(text));assert(/noindex,nofollow/.test(text));assert(/Content-Security-Policy/.test(text));
+  assert(/<html lang="en">/.test(text));assert(/name="viewport"/.test(text));assert(/<meta name="robots" content="index,follow">/.test(text),'Launch robots metadata');assert(!/noindex|nofollow|LOCAL DESIGN PREVIEW/.test(text),'Stale preview metadata or label');assert(/Content-Security-Policy/.test(text));
   assert.equal((text.match(/<h1[ >]/g)||[]).length,1,'One primary heading');assert(/class="skip"/.test(text));
   const ids=[...text.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,'Duplicate IDs');
   for(const [,ref] of text.matchAll(/(?:href|src)="([^"]+)"/g)){
-   if(ref.startsWith('https://')){assert.equal(ref,'https://github.com/RohithVarmaD07');continue;}
+   if(ref.startsWith('https://')){assert(['https://github.com/RohithVarmaD07','https://github.com/RohithVarmaD07/mediflow-ai','https://github.com/RohithVarmaD07/agentic-dataops'].includes(ref),'Unapproved external link '+ref);continue;}
    assert(!/^(?:http:|javascript:|mailto:|data:)/.test(ref));const [path,hash]=ref.split('#');const target=path||name;assert(names.includes(target),'Unknown link '+ref);links++;
    if(hash)assert((await readFile(new URL(target,root),'utf8')).includes('id="'+hash+'"'),'Missing anchor '+ref);
   }

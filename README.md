@@ -19,11 +19,11 @@ Open http://127.0.0.1:4173 and stop with Ctrl+C. No install or build step is req
 - [Design](docs/design-brief.md)
 - [Content evidence](docs/content-evidence-register.md)
 - [Acceptance checks](docs/acceptance-scenarios.md)
-- [Actual verification and file inventory](PUBLICATION.md)
-- [Deployment candidate hashes](PUBLICATION.md)
+- [Publication guidance](PUBLICATION.md)
+- [Retained verification summary and source-evidence hashes](dist/evidence.json)
 - [Security](SECURITY.md)
 
-The owner approved identity details for this local draft only. No email, LinkedIn or downloadable resume is included. GitHub profile identity is verified; project repository URLs are pending. No dependencies, external fonts, analytics or third-party browser requests are needed. Existing workflow drafts have not run on GitHub and are not deployment evidence.
+The owner approved identity details for this local draft only. No email, LinkedIn or downloadable resume is included. GitHub profile identity is verified. Project repositories are staged privately at [MediFlow AI](https://github.com/RohithVarmaD07/mediflow-ai) and [Agentic DataOps](https://github.com/RohithVarmaD07/agentic-dataops); access requires repository permission. Full file inventories and deployment-asset hashes remain in local review records, outside these repositories. No dependencies, external fonts, analytics or third-party browser requests are needed. Existing workflow drafts have not run on GitHub and are not deployment evidence.
 
 Future publication must approve exact assets, personal content, final license files, repository visibility, hosting and workflow permissions. Serve only the approved static asset set, never internal documentation or raw runtime artifacts. The three repositories are staged privately under RohithVarmaD07; public release and website deployment require separate approval.
 
