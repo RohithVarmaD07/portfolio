@@ -4,7 +4,7 @@ Approved identity: Rohith Varma, Data Engineer, https://github.com/RohithVarmaD0
 
 MediFlow claims use retained November 2 release-repair evidence: 147 tests, seven crash checkpoints, a 10,000-record demo and 24 output hashes. This website audit performs fresh static/browser checks, not a new pipeline run. Agentic DataOps is architecture-stage only. No AI inference or cloud execution is claimed.
 
-Only the nine dist assets are website deployment candidates. MIT license files are prepared locally. Final license-file review, exact manifests, Git operations, host and publication still require approval. No hosted workflow or repository has been created.
+Only the nine dist assets are website deployment candidates. MIT license files are prepared locally. Final license-file review, exact manifests, new Git operations, host and publication still require approval. The three repositories are staged privately under RohithVarmaD07. No hosted workflow or website deployment has been enabled.
 
 See [license scope](LICENSE_SCOPE.md) and [third-party review](THIRD_PARTY.md). The license preparation does not authorize Git operations or publication.
 

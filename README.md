@@ -1,4 +1,4 @@
-# Rohith Varma â€” engineering portfolio
+# Rohith Varma — engineering portfolio
 
 Status: implemented and locally checked static draft. Not deployed or approved for publication.
 
@@ -25,7 +25,7 @@ Open http://127.0.0.1:4173 and stop with Ctrl+C. No install or build step is req
 
 The owner approved identity details for this local draft only. No email, LinkedIn or downloadable resume is included. GitHub profile identity is verified; project repository URLs are pending. No dependencies, external fonts, analytics or third-party browser requests are needed. Existing workflow drafts have not run on GitHub and are not deployment evidence.
 
-Future publication must approve exact assets, personal content, final license files, repository visibility, hosting and workflow permissions. Serve only the approved static asset set, never internal documentation or raw runtime artifacts. The three repositories remain uncreated; copy-only separation requires separate approval.
+Future publication must approve exact assets, personal content, final license files, repository visibility, hosting and workflow permissions. Serve only the approved static asset set, never internal documentation or raw runtime artifacts. The three repositories are staged privately under RohithVarmaD07; public release and website deployment require separate approval.
 
 The privacy checker requires nonempty `PORTFOLIO_PRIVATE_TERMS` JSON configuration supplied locally, never committed. Include every private identifier that must be excluded; matching is case-insensitive. It also rejects generic private paths, key markers and emails. Checker regression tests use `node --test scripts/check.test.mjs` with `PORTFOLIO_TEST_ROOT` pointing to a new isolated evidence directory. Test fixtures are retained; no source website assets are mutated.
 
